@@ -1,8 +1,18 @@
 import ctypes
 import os
+import sys
 from ctypes import c_char_p, c_int, c_void_p, POINTER
 
-lib_path = os.path.join(os.path.dirname(__file__), "llrp_client.dll")
+if sys.platform.startswith('win'):
+  lib_filename = "llrp_client.dll"
+elif sys.platform.startswith('linux'):
+  lib_filename = "lib_llrp_client.so"
+elif sys.playform.startswith('darwin'):
+  lib_filename = "lib_llrp_client.dylib"
+else:
+  raise OSError("Unsupported operating system")
+
+lib_path = os.path.join(os.path.dirname(__file__), lib_filename)
 llrp_lib = ctypes.CDLL(lib_path)
 
 llrp_lib.initialize_client.argtypes = [c_char_p]
