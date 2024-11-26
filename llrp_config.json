@@ -2,7 +2,7 @@
   "host": "192.168.1.102:5084",
   "await_response_ack": true,
   "response_timeout": 500,
-  "ro_access_report_timeout": 250,
+  "ro_access_report_timeout": 5000,
   "ROSpec": {
     "rospec_id": 1,
     "priority": 1,
