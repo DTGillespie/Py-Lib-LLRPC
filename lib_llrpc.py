@@ -138,11 +138,11 @@ def await_ro_access_report(client):
 llrp_lib.disconnect_client.argtypes = [c_void_p]
 llrp_lib.disconnect_client.restype = c_int
 
-def disconnect_client(client):
-  result = llrp_lib.disconnect_client(client)
+def send_close_connection(client):
+  result = llrp_lib.send_close_connection(client)
   if result != 0:
     error = get_last_error()
-    raise Exception(f"Error disconnecting client: {error}")
+    raise Exception(f"Error sending CLOSE_CONNECTION: {error}")
 
 llrp_lib.free_client.argtypes = [c_void_p]
 llrp_lib.free_client.restype = c_int
