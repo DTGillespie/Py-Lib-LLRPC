@@ -1,0 +1,26 @@
+{
+  "host": "192.168.1.102:5084",
+  "log_level": "debug",
+  "log_response_ack": true,
+  "response_timeout": 250,
+  "reader_config": {
+    "hop_table_id": 1,
+    "channel_index": 1,
+    "tx_power_table_index": 1,
+    "rx_power_table_index": 1
+  },
+  "rospec": {
+    "rospec_id": 1,
+    "priority": 1,
+    "antenna_count": 4,
+    "antennas": [1, 2, 3, 4],
+    "ROSpecStartTriggerType": 0,
+    "ROSpecStopTriggerType": 0,
+    "AISpecStopTriggerType": 0,
+    "InventoryParamSpecID": 1,
+    "AIProtocol": 1,
+    "ROReportTriggerType": 1,
+    "ROReportTrigger_N": 1,
+    "ReportContentSelector": 1
+  }
+}
