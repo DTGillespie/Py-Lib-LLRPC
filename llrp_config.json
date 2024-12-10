@@ -6,7 +6,7 @@
   "reader_config": {
     "hop_table_id": 1,
     "channel_index": 1,
-    "tx_power_table_index": 175,
+    "tx_power_table_index": 150,
     "rx_power_table_index": 0
   },
   "rospec": {
