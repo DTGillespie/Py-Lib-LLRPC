@@ -99,22 +99,22 @@ class LLRPClient:
       raise Exception(f"Error initializing client: {error}")
 
   def set_reader_capabilities_callback(self, callback):
-    cb = ReaderCapabilitiesCallback(callback)
-    result = llrp_lib.client_set_reader_capabilities_callback(self._handle, cb)
+    self.reader_capabilities_callback = ReaderCapabilitiesCallback(callback)
+    result = llrp_lib.client_set_reader_capabilities_callback(self._handle, self.reader_capabilities_callback)
     if result != 0:
       error = get_last_error()
       raise Exception(f"Error setting reader capabilities callback: {error}")
 
   def set_reader_config_callback(self, callback):
-    cb = ReaderConfigCallback(callback)
-    result = llrp_lib.client_set_reader_config_callback(self._handle, cb)
+    self.reader_config_callback = ReaderConfigCallback(callback)
+    result = llrp_lib.client_set_reader_config_callback(self._handle, self.reader_config_callback)
     if result != 0:
       error = get_last_error()
       raise Exception(f"Error setting reader config callback: {error}")
 
   def set_ro_access_report_callback(self, callback):
-    cb = ROAccessReportCallback(callback)
-    result = llrp_lib.client_set_ro_access_report_callback(self._handle, cb)
+    self.ro_access_report_callback = ROAccessReportCallback(callback)
+    result = llrp_lib.client_set_ro_access_report_callback(self._handle, self.ro_access_report_callback)
     if result != 0:
       error = get_last_error()
       raise Exception(f"Error setting RO access report callback: {error}")

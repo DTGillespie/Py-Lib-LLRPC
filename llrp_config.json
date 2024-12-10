@@ -1,8 +1,8 @@
 {
   "host": "192.168.1.102:5084",
-  "log_level": "debug",
+  "log_level": "info",
   "log_response_ack": true,
-  "response_timeout": 500,
+  "response_timeout": 250,
   "reader_config": {
     "hop_table_id": 1,
     "channel_index": 1,
